@@ -20,4 +20,8 @@ public class MainViewController {
     private void goHome() throws IOException{
        main.showMainItems();
     }
+    @FXML
+    private void addBtn() throws IOException{
+        main.showAddStage();
+    }
 }
