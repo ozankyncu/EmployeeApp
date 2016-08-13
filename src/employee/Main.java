@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Main extends Application {
     private Stage primaryStage;
-    private BorderPane mainlayout;
+    private static BorderPane mainlayout;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -39,10 +39,24 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    private void showMainItems() throws IOException {
+    public static void showMainItems() throws IOException {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/MainItems.fxml"));
         BorderPane mainItems=loader.load();
         mainlayout.setCenter(mainItems);
     }
+    public static void showElectricalScreen() throws IOException{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(Main.class.getResource("electrical/ElectricalDepartment.fxml"));
+        BorderPane electricalDepartment=loader.load();
+        mainlayout.setCenter(electricalDepartment);
+    }
+
+    public static void showMechanicalScreen() throws IOException{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(Main.class.getResource("mechanical/MechanicalDepartment.fxml"));
+        BorderPane mechanicalDepartment=loader.load();
+        mainlayout.setCenter(mechanicalDepartment);
+    }
 }
+
